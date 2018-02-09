@@ -1,0 +1,50 @@
+extends ./_layout/_page.pug
+
+block vars
+  -
+    var page = data.pages.index;
+
+block contentFixedBefore
+
+block contentStatic
+  .p-slide#slide
+    .p-slide__wrap
+      .p-slide__items(
+        :style = "style",
+        @mousedown="startDrag",
+        @mousemove="drag",
+        @mouseup="finishDrag",
+        @mouseout="finishDrag",
+        @touchstart="startDrag",
+        @touchmove="drag",
+        @touchend="finishDrag",
+        )
+        .p-slide__item
+          .p-slide__item-image
+            img(src="/img/photo01.jpg", alt="")
+          .p-slide__item-text
+            |sample
+        .p-slide__item
+          .p-slide__item-image
+            img(src="/img/photo02.jpg", alt="")
+          .p-slide__item-text
+            |sample
+        .p-slide__item
+          .p-slide__item-image
+            img(src="/img/photo03.jpg", alt="")
+          .p-slide__item-text
+            |sample
+        .p-slide__item
+          .p-slide__item-image
+            img(src="/img/photo04.jpg", alt="")
+          .p-slide__item-text
+            |sample
+        .p-slide__item
+          .p-slide__item-image
+            img(src="/img/photo05.jpg", alt="")
+          .p-slide__item-text
+            |sample
+          
+    
+
+block contentFixedAfter

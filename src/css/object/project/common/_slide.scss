@@ -1,0 +1,26 @@
+.p-slide {
+  margin-top: 100px;
+  &__wrap {
+  }
+  &__items {
+    display: flex;
+    margin-left: (124 / 768) * 100%;
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  &__item {
+    box-sizing: border-box;
+    &-image {
+      width: (520 / 580) * 100%;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    &-text {
+
+    }
+  }
+}
