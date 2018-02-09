@@ -1,12 +1,9 @@
 const Vue = require('vue/dist/vue.min');
 
-export default function(el, itemLength) {
+export default function(el) {
   return new Vue({
     el: el,
     data: {
-      items: null,
-      itemLength: itemLength,
-      itemsWidth: (580 * itemLength / 768) * 100 + '%',
       itemWidth: null,
       index:  0,
       touchX: 0,
@@ -22,7 +19,7 @@ export default function(el, itemLength) {
       startSlide: false,
     },
 
-    mounted: function() {
+    created: function() {
       this.getItemWidth();
 
       window.addEventListener('resize', ()=> {
@@ -33,10 +30,10 @@ export default function(el, itemLength) {
     computed: {
       style: function() {
         if(this.isAnimate) {
-          return { transform: 'translate3d(' + this.translateX + 'px, 0, 0)', transitionDuration: '0.6s', width: this.itemsWidth };
+          return { transform: 'translate3d(' + this.translateX + 'px, 0, 0)', transitionDuration: '0.6s' };
 
         } else {
-          return { transform: 'translate3d(' + this.translateX + 'px, 0, 0)', transitionDuration: '0s', width: this.itemsWidth };
+          return { transform: 'translate3d(' + this.translateX + 'px, 0, 0)', transitionDuration: '0s'};
         }
       },
     },
